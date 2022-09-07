@@ -1,8 +1,11 @@
 import './App.css'
+import CharacterCard from './components/CharacterCard/CharacterCard'
 
 export default function App() {
 
   return (
-    <div></div>
+    <div>
+      <CharacterCard/>
+    </div>
   )
 }
