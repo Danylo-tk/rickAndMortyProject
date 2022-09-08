@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 const Card = styled.section`
   display: flex;
-  margin: 1rem;
-  width: 40rem;
+  width: 100%;
+  margin: 1rem 0;
   color: white;
-  text-align: center;
-  background-color: black;
+  text-align: left;
+  background-color: #232b2b;
 `;
 
 const CardData = styled.div`
@@ -33,13 +33,13 @@ export default function CharacterCard() {
   const [name, setName] = useState(null);
   const [status, setStatus] = useState(null);
   const [gender, setGender] = useState(null);
-
+  
   function getRandomCharacter(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
   }
-
+  
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character/" + getRandomCharacter(1, 827))
       .then((response) => response.json())
